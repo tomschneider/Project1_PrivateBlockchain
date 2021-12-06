@@ -1,0 +1,81 @@
+createrawtransaction '[{"txid":"TXID","vout": VOUT}]''{“to_address”:amount1, “from_address”:amount2}'
+
+createrawtransaction '[{"txid": "e787a27bda32c8b54ee501be46d2cfcd47c1566c8ef6ee339bdb7cd5c82b701c", "vout":0}]' '{"2NFK8YHKT6hPPTDKTPP3c5bx7oPGrYhzj2y":0.030, "2Mzxx8wGAmQQyCCrb2vXP4yxaYY9s9nepfy":0.0195}'
+
+decoderawtransaction "hexstring"
+
+decoderawtransaction 02000000011c702bc8d57cdb9b33eef68e6c56c147cdcfd246be01e54eb5c832da7ba287e70000000000ffffffff02c0c62d000000000017a914f20fe211102535e3c37bb0e659099387ddc035b58730c11d000000000017a91454ad1e8953876c90d3fc15798c687835ab3d3aee8700000000
+
+{
+  "txid": "655419a854bdb808fb7cc3a68b8aab372e944ca028001ea247cead3ed00472eb",
+  "hash": "655419a854bdb808fb7cc3a68b8aab372e944ca028001ea247cead3ed00472eb",
+  "version": 2,
+  "size": 115,
+  "vsize": 115,
+  "locktime": 0,
+  "vin": [
+    {
+      "txid": "e787a27bda32c8b54ee501be46d2cfcd47c1566c8ef6ee339bdb7cd5c82b701c",
+      "vout": 0,
+      "scriptSig": {
+        "asm": "",
+        "hex": ""
+      },
+      "sequence": 4294967295
+    }
+  ],
+  "vout": [
+    {
+      "value": 0.03000000,
+      "n": 0,
+      "scriptPubKey": {
+        "asm": "OP_HASH160 f20fe211102535e3c37bb0e659099387ddc035b5 OP_EQUAL",
+        "hex": "a914f20fe211102535e3c37bb0e659099387ddc035b587",
+        "reqSigs": 1,
+        "type": "scripthash",
+        "addresses": [
+          "2NFK8YHKT6hPPTDKTPP3c5bx7oPGrYhzj2y"
+        ]
+      }
+    },
+    {
+      "value": 0.01950000,
+      "n": 1,
+      "scriptPubKey": {
+        "asm": "OP_HASH160 54ad1e8953876c90d3fc15798c687835ab3d3aee OP_EQUAL",
+        "hex": "a91454ad1e8953876c90d3fc15798c687835ab3d3aee87",
+        "reqSigs": 1,
+        "type": "scripthash",
+        "addresses": [
+          "2Mzxx8wGAmQQyCCrb2vXP4yxaYY9s9nepfy"
+        ]
+      }
+    }
+  ]
+}
+
+signrawtransactionwithwallet 020000017a914f953876c90d3fc15798c687835ab3d3aee8700000000
+
+////////////
+This from example from the Lesson 4: Blockchain Data steps in Create a Transaction
+//command from Udacity, the good one
+createrawtransaction '[{"txid": "e787a27bda32c8b54ee501be46d2cfcd47c1566c8ef6ee339bdb7cd5c82b701c", "vout":0}]' '{"2NFK8YHKT6hPPTDKTPP3c5bx7oPGrYhzj2y":0.030, "2Mzxx8wGAmQQyCCrb2vXP4yxaYY9s9nepfy":0.0195}'
+
+// my good command - the formatting was nuts with the single and double quotes. I should have done it all in IntelliJ
+createrawtransaction '[{"txid": "bf82f253dace8e8dd7886279897cce06303d00e27dc73d686af1c58b03600cf9", "vout":15}]' '{"tb1qrkjy25pzdsquzpnspq053xa6hr9vqvfzkt59rg":0.001, "tb1q46n64yq24lrg62h90jv65we5s9l56eufs4wglr":0.030}'
+
+
+// returned RAW  transaction
+
+￼
+0200000001f90c60038bc5f16a683dc77de2003d3006ce7c89796288d78d8eceda53f282bf0f00000000ffffffff02a0860100000000001600141da44550226c01c10670081f489bbab8cac03122c0c62d0000000000160014aea7aa900aafc68d2ae57c99aa3b34817f4d678900000000
+
+
+// command to sign the RAW transaction
+signrawtransactionwithwallet 0200000001f90c60038bc5f16a683dc77de2003d3006ce7c89796288d78d8eceda53f282bf0f00000000ffffffff02a0860100000000001600141da44550226c01c10670081f489bbab8cac03122c0c62d0000000000160014aea7aa900aafc68d2ae57c99aa3b34817f4d678900000000
+
+
+// returned signed RAW transaction with wallet
+02000000000101f90c60038bc5f16a683dc77de2003d3006ce7c89796288d78d8eceda53f282bf0f00000000ffffffff02c0c62d00000000001600141da44550226c01c10670081f489bbab8cac0312230c11d0000000000160014aea7aa900aafc68d2ae57c99aa3b34817f4d678902473044022057b0aba5b1b283ce2500fb0926f45c6afe34687c91ccadffa4010e0fe48dbca4022051ce6887aec8f9d76a424beedd2fa1b90ee153bb0fb065d3d1b6e3d982ee07fb012102ea0bd5f6367f2c74b432f29025de098f43d49888cfa717cfa6e0683a7023ddd100000000
+
+// decoded

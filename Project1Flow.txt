@@ -1,0 +1,20 @@
+Start Server
+
+Create Genesis Block
+
+Make First Request of Ownership with our Wallet Address
+
+Take return Ownership Message and Sign it with testnet_wallet wallet in Bitcoin Core
+ - returns Signature
+
+Submit the Star information including
+ - address
+ - signature
+ - Ownership message
+ - Star Object
+
+Do this a few times
+
+Get Stars owned by me
+
+
